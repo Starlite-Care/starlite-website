@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
-import NavbarWrapper from "@/components/NavbarWrapper";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/UI/Footer";
 
 const geistMonoBold = localFont({
   src: "./fonts/Geist-Bold.otf",
@@ -34,7 +35,9 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistMonoBold.variable} ${geistMonoMedium.variable} ${geistMonoRegular.variable} ${geistMonoSemiBold.variable}   antialiased`}
       >
-        <NavbarWrapper>{children}</NavbarWrapper>
+        <Navbar />
+        {children}
+        <Footer />
       </body>
     </html>
   );
