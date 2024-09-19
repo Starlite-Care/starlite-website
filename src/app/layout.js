@@ -1,14 +1,24 @@
 import localFont from "next/font/local";
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
+const geistMonoBold = localFont({
+  src: "./fonts/Geist-Bold.otf",
+  variable: "--font-geist-bold",
   weight: "100 900",
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
+const geistMonoMedium = localFont({
+  src: "./fonts/Geist-Medium.otf",
+  variable: "--font-geist-medium",
+  weight: "100 900",
+});
+const geistMonoRegular = localFont({
+  src: "./fonts/Geist-Regular.otf",
+  variable: "--font-geist-regular",
+  weight: "100 900",
+});
+const geistMonoSemiBold = localFont({
+  src: "./fonts/Geist-SemiBold.otf",
+  variable: "--font-geist-semibold",
   weight: "100 900",
 });
 
@@ -21,7 +31,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistMonoBold.variable} ${geistMonoMedium.variable} ${geistMonoRegular.variable} ${geistMonoSemiBold.variable}   antialiased`}
       >
         {children}
       </body>
