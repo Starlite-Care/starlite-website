@@ -68,9 +68,9 @@ const ContactUs = () => {
             Get in Touch
           </h1>
           <p className="text-[14px] text-[#5F5B5B] font-normal font-geistRegular max-w-[600px]">
-            Have questions or need more information? We're here to help. Whether
-            you're ready to schedule a consultation or just want to learn more
-            about our services, feel free to reach out.
+            Have questions or need more information? We are here to help.
+            Whether you are ready to schedule a consultation or just want to
+            learn more about our services, feel free to reach out.
           </p>
         </div>
 
