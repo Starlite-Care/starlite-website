@@ -126,7 +126,7 @@ const ContactUs = () => {
               Have specific things to share? Schedule call with a specialist
             </p>
             <a
-              href="/scheduleCall"
+              href="/consultation"
               className="font-geistRegular text-[#007AFF] underline"
             >
               Schedule a call
