@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/UI/Footer";
 
+
 const geistMonoBold = localFont({
   src: "./fonts/Geist-Bold.otf",
   variable: "--font-geist-bold",
@@ -32,6 +33,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      
       <body
         className={`${geistMonoBold.variable} ${geistMonoMedium.variable} ${geistMonoRegular.variable} ${geistMonoSemiBold.variable}   antialiased`}
       >
