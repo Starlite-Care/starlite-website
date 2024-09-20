@@ -29,9 +29,9 @@ const ScheduleCall = () => {
             Schedule a consultation
           </h1>
           <p className="font-normal font-geistRegular text-sm text-center">
-            Have questions or need more information? We're here to help. Whether
-            you're ready to schedule a consultation or just want to learn more
-            about our services, feel free to reach out.
+            Have questions or need more information? We are here to help.
+            Whether you are ready to schedule a consultation or just want to
+            learn more about our services, feel free to reach out.
           </p>
         </div>
 
