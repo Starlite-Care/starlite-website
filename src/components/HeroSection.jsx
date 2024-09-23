@@ -64,7 +64,7 @@ const HeroSection = () => {
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-8 sm:space-y-0">
             <Link 
               href="/contactUs" 
-              className="bg-[#4CAF50] px-6 py-2 sm:px-8 sm:py-3 rounded-full text-white text-center"
+              className=" bg-gradient-to-tl from-green-700 to-green-500 hover:from-green-700 hover:to-green-500 transition-colors duration-300 shadow-md  px-6 py-2 rounded-full text-white text-center"
             >
               Contact Us
             </Link>
