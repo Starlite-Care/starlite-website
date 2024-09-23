@@ -16,11 +16,12 @@ const Personalize = () => {
       </p>
       
       {/* Call to Action Button */}
-      <Link href="/contactUs" className="mb-8 sm:mb-10">
-        <span className="bg-green-500 text-white text-base sm:text-lg py-3 px-6 sm:px-8 rounded-full shadow-lg hover:bg-green-600 transition-colors duration-300 inline-block">
-          Contact us now
-        </span>
-      </Link>
+      <Link 
+              href="/contactUs" 
+             className="w-full  sm:w-[300px] mb-7 text-center py-3 px-4 text-white font-geistRegular font-semibold text-lg rounded-full bg-gradient-to-tl from-green-700 to-green-500 hover:from-green-700 hover:to-green-500 transition-colors duration-300 shadow-md mt-4 mx-auto"
+            >
+              Contact Us
+            </Link>
       
       {/* Social Media Icons */}
       <div className="flex space-x-4 sm:space-x-6">
