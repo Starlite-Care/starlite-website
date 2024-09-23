@@ -17,7 +17,7 @@ const SupportSection = () => {
           </p>
         </div>
         {/* Image Section */}
-        <div className="w-full md:w-5/12 relative">
+        <div className="w-full md:w-5/12 relative h-56 md:h-auto">
           <Image 
             src="/images/support-image.png"
             alt="Support Image"
