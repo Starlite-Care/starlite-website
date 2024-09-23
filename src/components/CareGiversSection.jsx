@@ -5,24 +5,22 @@ import React from 'react'
 
 const CareGiversSection = () => {
   return (
-    <section className="flex items-center justify-center py-10 bg-white px-4">
-      <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-7xl bg-[#F9F3FF] rounded-lg shadow-lg overflow-hidden">
+    <section className="flex items-center justify-center py-16 bg-white">
+      <div className="flex flex-col md:flex-row items-stretch w-full max-w-7xl bg-[#F9F3FF] rounded-lg shadow-lg overflow-hidden">
         {/* Image Section */}
-        <div className="w-full md:w-5/12 h-[200px] md:h-[300px] relative">
+        <div className="w-full md:w-5/12 relative">
           <Image 
             src="/images/care-giver.png"
             alt="Support Image"
             fill
             style={{ objectFit: 'cover' }}
-            sizes="(max-width: 768px) 100vw, 50vw"
+            sizes="(max-width: 768px) 100vw, 41.66vw"
           />
         </div>
         {/* Text Section */}
-        <div className="w-full md:w-7/12 p-6 md:p-8">
+        <div className="w-full md:w-7/12 p-6 md:p-8 py-20">
           <div className="flex items-center mb-4">
-            <div className="flex items-center justify-center w-8 h-8 border-[2px] border-[#805AA0] bg-white rounded-full">
-              <span className="text-[#805AA0] text-base font-bold">/</span>
-            </div>
+            <Image src="/images/backward.svg" alt='backward' width={80} height={80} />
           </div>
           <h2 className="text-xl md:text-2xl text-black font-bold mb-4 font-geistSemiBold leading-tight">
             Our caregivers

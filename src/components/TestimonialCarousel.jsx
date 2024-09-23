@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image';
 import React from 'react';
 
 const testimonials = [
@@ -33,9 +34,11 @@ const StarRating = () => (
 );
 
 const TestimonialCard = ({ testimonial, isMiddle }) => (
-  <div className={`bg-white rounded-lg shadow-md p-6 flex flex-col justify-between w-full md:w-[360px] ${isMiddle ? 'md:h-[280px] md:z-10' : 'md:h-[260px] md:-mt-2'} transition-all duration-300 mb-6 md:mb-0`}>
+  <div className={`bg-white rounded-lg p-2   shadow-md flex flex-col justify-between w-full md:w-[360px] ${isMiddle ? 'md:h-[280px] md:z-10' : 'md:h-[260px] md:-mt-2'} transition-all duration-300 mb-6 md:mb-0`}>
     <div>
-      <div className="text-gray-300 text-4xl font-serif mb-2">&quote;</div>
+      <div className=" mb-2">
+        <Image src="/images/quote.svg" alt='quote' width={50} height={50} />
+      </div>
       <StarRating />
       <p className="text-gray-700 mb-4 text-sm">{testimonial.text}</p>
     </div>

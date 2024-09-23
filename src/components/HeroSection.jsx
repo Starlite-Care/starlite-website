@@ -13,7 +13,7 @@ const TrustedFamilies = () => {
   ];
 
   return (
-    <div className="max-w-xs mt-14">
+    <div className="max-w-xs mt-8">
       <div className="relative flex justify-center items-center">
         {images.map((src, index) => (
           <div 
@@ -35,7 +35,7 @@ const TrustedFamilies = () => {
           </div>
         ))}
       </div>
-      <p className="text-center mt-8 text-[12px] text-sm font-bold text-white">
+      <p className="text-center mt-6 text-sm font-bold text-white">
         Trusted by over 100k families
       </p>
       <p className="text-center text-xs text-white">
@@ -47,29 +47,29 @@ const TrustedFamilies = () => {
 
 const HeroSection = () => {
   return (
-    <div className="bg-[url('/images/bg.png')] bg-cover bg-center min-h-[50vh] sm:min-h-screen w-full">
-      <div className="py-16 sm:py-32 px-6 sm:px-28">
-        <div className="bg-[#958C9B] rounded-full w-full sm:w-[20%] text-center px-3 py-1">
-          <p className="text-white libre-baskerville-regular text-[13px]">Welcome to Starlight Care !</p>
-        </div>
-        <div className="py-6 sm:py-10">
-          <h2 className="text-[32px] sm:text-[50px] w-full sm:w-[550px] font-bold text-white font-geistSemiBold leading-[60px] flex flex-col">
-            Home care services like no other
-          </h2>
-          <p className="text-white w-full sm:w-[50%] text-[12px] mt-4 sm:mt-0">
-            We provide personalized, professional home care services to help your loved ones live comfortably and independently in the place they call home.
-          </p>
-           <div className="flex flex-col md:flex-row justify-between items-center">
-          <Link 
-            href="/contactUs" 
-            className="bg-[#4CAF50] px-6 py-2 md:px-8 md:py-2 rounded-full text-white text-center"
-          >
-            Contact Us
-          </Link>
-          <div className="mt-4 md:mt-0 md:ml-6">
+    <div className="relative bg-cover bg-center" style={{ backgroundImage: "url('/images/bg.png')" }}>
+      <div className="h-screen md:-h-[80vh] lg:-h-[70vh] w-full flex items-center"> 
+        <div className="container mx-auto px-6 sm:px-8 py-12 sm:py-16">
+          <div className="bg-[#958C9B] rounded-full w-fixed sm:w-[20%] text-center px-3 py-1 mb-8">
+            <p className="text-white libre-baskerville-regular text-[13px]">Welcome to Starlite Care !</p>
+          </div>
+          <div className="mb-8 sm:mb-12">
+            <h2 className="text-[50px] leading-[50px] w-[500px] text-white font-geistSemiBold">
+              Home care services like no other
+            </h2>
+            <p className="text-white w-full sm:w-[50%] text-[12px] mt-4">
+              We provide personalized, professional home care services to help your loved ones live comfortably and independently in the place they call home.
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row justify-between items-center space-y-8 sm:space-y-0">
+            <Link 
+              href="/contactUs" 
+              className="bg-[#4CAF50] px-6 py-2 sm:px-8 sm:py-3 rounded-full text-white text-center"
+            >
+              Contact Us
+            </Link>
             <TrustedFamilies />
           </div>
-        </div> 
         </div>
       </div>
     </div>
