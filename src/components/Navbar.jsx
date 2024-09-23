@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
-const BLACK_TEXT_ROUTES = [,"/contactUs", "/services", "/resources"];
+const BLACK_TEXT_ROUTES = ["/contactUs", "/services", "/resources"];
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -71,31 +71,31 @@ const Navbar = () => {
 
       {/* Side Menu for Mobile */}
       <div
-        className={`fixed top-0 left-0 w-64 h-full bg-white z-50 transform transition-transform duration-300 ease-in-out ${
-          isSideMenuOpen ? "translate-x-0" : "-translate-x-full"
+        className={`fixed top-0 right-0 w-1/2 h-1/2 bg-white z-50 transform transition-transform duration-300 ease-in-out ${
+          isSideMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="p-4">
+        <div className="p-4 h-full flex flex-col">
           <button
             onClick={toggleSideMenu}
-            className="mb-8 text-black hover:text-green-400"
+            className="self-end text-black hover:text-green-400 mb-4"
           >
             <X size={24} />
           </button>
           <nav className="flex flex-col space-y-4">
-            <Link href="/services" className="text-black hover:text-green-400" onClick={toggleSideMenu}>
+            <Link href="/services" className="text-black hover:text-green-400 text-lg" onClick={toggleSideMenu}>
               Services
             </Link>
-            <Link href="/consultation" className="text-black hover:text-green-400" onClick={toggleSideMenu}>
+            <Link href="/consultation" className="text-black hover:text-green-400 text-lg" onClick={toggleSideMenu}>
               Consultation
             </Link>
-            <Link href="/resources" className="text-black hover:text-green-400" onClick={toggleSideMenu}>
+            <Link href="/resources" className="text-black hover:text-green-400 text-lg" onClick={toggleSideMenu}>
               Resources
             </Link>
-            <Link href="/career" className="text-black hover:text-green-400" onClick={toggleSideMenu}>
+            <Link href="/career" className="text-black hover:text-green-400 text-lg" onClick={toggleSideMenu}>
               Career
             </Link>
-            <Link href="/contactUs" className="text-black hover:text-green-400" onClick={toggleSideMenu}>
+            <Link href="/contactUs" className="text-black hover:text-green-400 text-lg" onClick={toggleSideMenu}>
               Contact us
             </Link>
           </nav>
@@ -105,4 +105,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;  
+export default Navbar;

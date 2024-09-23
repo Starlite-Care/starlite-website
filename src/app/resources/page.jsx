@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 const Resources = () => {
@@ -18,8 +19,14 @@ const Resources = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {resources.map((resource, index) => (
           <div key={index} className="flex flex-col">
-            <div className="bg-white rounded-lg overflow-hidden shadow-md mb-3">
-              <img src={resource.image} alt={resource.title} className="w-full h-56 object-cover rounded-md" />
+            <div className="bg-white rounded-lg overflow-hidden shadow-md mb-3 relative h-56">
+              <Image 
+                src={resource.image} 
+                alt={resource.title} 
+                fill
+                style={{ objectFit: 'cover' }}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
             </div>
             <h3 className="text-blue-500 font-semibold mb-1 text-[12px]">{resource.title}</h3>
             <p className="text-gray-500 text-[10px]">{resource.date}</p>
