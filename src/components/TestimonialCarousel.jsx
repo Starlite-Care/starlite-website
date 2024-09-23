@@ -37,10 +37,10 @@ const TestimonialCard = ({ testimonial, isMiddle }) => (
   <div className={`bg-white rounded-lg p-2   shadow-md flex flex-col justify-between w-full md:w-[360px] ${isMiddle ? 'md:h-[280px] md:z-10' : 'md:h-[260px] md:-mt-2'} transition-all duration-300 mb-6 md:mb-0`}>
     <div>
       <div className=" mb-2">
-        <Image src="/images/quote.svg" alt='quote' width={50} height={50} />
+        <Image src="/images/quote.svg" alt='quote' width={30} height={30} />
       </div>
       <StarRating />
-      <p className="text-gray-700 mb-4 text-sm">{testimonial.text}</p>
+      <p className="text-gray-700  text-sm">{testimonial.text}</p>
     </div>
     <div className="flex justify-between items-end">
       <div>
