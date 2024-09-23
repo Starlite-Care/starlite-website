@@ -1,8 +1,14 @@
-" use client";
-import React from "react";
+import CareGiversSection from '@/components/CareGiversSection'
+import ServicesSection from '@/components/ServicesSection'
+import React from 'react'
 
-const Services = () => {
-  return <div>Services</div>;
-};
+const page = () => {
+  return (
+   <>
+     <ServicesSection />
+     <CareGiversSection />
+   </>
+  )
+}
 
-export default Services;
+export default page
