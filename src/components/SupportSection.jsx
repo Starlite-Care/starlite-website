@@ -7,10 +7,8 @@ const SupportSection = () => {
         {/* Text Section */}
         <div className="w-full md:w-7/12 p-6 md:p-8">
           <div className="flex items-center mb-4">
-            <div className="flex items-center justify-center w-7 h-7 border-2 border-green-500 bg-white rounded-full">
-              <span className="text-green-500 text-base font-bold">/</span>
+              <Image src="/images/foward.svg" alt='foward' width={80} height={20} />
             </div>
-          </div>
           <h2 className="text-xl md:text-2xl text-black font-bold font-geistSemiBold leading-tight mb-4">
             Support all-round the clock
           </h2>
