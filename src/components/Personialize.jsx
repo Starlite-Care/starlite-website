@@ -24,18 +24,18 @@ const Personalize = () => {
       {/* Social Media Icons */}
       <div className="flex space-x-3 sm:space-x-4">
         {/* Facebook Icon */}
-        <a href="#" className="bg-blue-100 p-2 sm:p-3 rounded-full hover:bg-blue-200 transition-colors duration-300">
-          <img src="/icons/facebook.svg" alt="Facebook" className="w-5 h-5 sm:w-6 sm:h-6" />
+        <a href="#" >
+          <img src="/images/facebook.svg" alt="Facebook" className=" w-12 h-12" />
         </a>
         
         {/* LinkedIn Icon */}
-        <a href="#" className="bg-blue-100 p-2 sm:p-3 rounded-full hover:bg-blue-200 transition-colors duration-300">
-          <img src="/icons/linkedin.svg" alt="LinkedIn" className="w-5 h-5 sm:w-6 sm:h-6" />
+        <a href="#" >
+          <img src="/images/in.svg" alt="Linkeidin" className=" w-12 h-12" />
         </a>
         
         {/* X (Twitter) Icon */}
-        <a href="#" className="bg-blue-100 p-2 sm:p-3 rounded-full hover:bg-blue-200 transition-colors duration-300">
-          <img src="/icons/twitter.svg" alt="Twitter" className="w-5 h-5 sm:w-6 sm:h-6" />
+        <a href="#" >
+          <img src="/images/x.svg" alt="twitter" className=" w-12 h-12" />
         </a>
       </div>
     </section>
