@@ -28,7 +28,7 @@ const ServicesSection = () => {
                 layout="responsive" 
                 className="rounded-md"
               />
-              <p className="absolute font-geistRegular text-xs bottom-0 w-full py-2 px-2 text-white bg-black bg-opacity-50">
+              <p className="absolute font-geistRegular text-xs bottom-0 w-full py-2 px-2 text-white">
                 {service.title}
               </p>
             </div>

@@ -54,7 +54,7 @@ const HeroSection = () => {
             <p className="text-white libre-baskerville-regular text-[13px]">Welcome to Starlite Care !</p>
           </div>
           <div className="mb-8 sm:mb-12">
-            <h2 className="text-[50px] leading-[50px] w-[550px] text-white font-geistSemiBold">
+            <h2 className="md:text-[50px] text-[30px] w-[300px] leading-[50px] md:w-[550px] text-white font-geistSemiBold">
               Home care services like no other
             </h2>
             <p className="text-white w-full sm:w-[50%] text-[12px] mt-4">
@@ -64,7 +64,7 @@ const HeroSection = () => {
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-8 sm:space-y-0">
             <Link 
               href="/contactUs" 
-              className="bg-[#4CAF50] px-6 py-2 sm:px-8 sm:py-3 rounded-full text-white text-center"
+              className=" bg-gradient-to-tl from-green-700 to-green-500 hover:from-green-700 hover:to-green-500 transition-colors duration-300 shadow-md  px-6 py-2 rounded-full text-white text-center"
             >
               Contact Us
             </Link>
