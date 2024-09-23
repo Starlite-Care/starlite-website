@@ -54,7 +54,7 @@ const HeroSection = () => {
             <p className="text-white libre-baskerville-regular text-[13px]">Welcome to Starlite Care !</p>
           </div>
           <div className="mb-8 sm:mb-12">
-            <h2 className="text-[50px] leading-[50px] w-[550px] text-white font-geistSemiBold">
+            <h2 className="md:text-[50px] text-[30px] w-[300px] leading-[50px] md:w-[550px] text-white font-geistSemiBold">
               Home care services like no other
             </h2>
             <p className="text-white w-full sm:w-[50%] text-[12px] mt-4">
