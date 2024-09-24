@@ -29,7 +29,7 @@ const Navbar = () => {
   return (
     <>
       <div className="fixed top-0 z-50 bg-transparent backdrop-blur-md backdrop-filter w-full">
-        <div className="flex justify-between items-center px-4 sm:px-10 py-4">
+        <div className="flex mx-12   justify-between items-center px-4 sm:px-10 py-4">
           {/* Logo or Brand Name */}
           <Link
             href="/"

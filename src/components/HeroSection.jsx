@@ -47,14 +47,14 @@ const TrustedFamilies = () => {
 
 const HeroSection = () => {
   return (
-    <div className="relative bg-cover bg-center" style={{ backgroundImage: "url('/images/bg.png')" }}>
-      <div className="h-screen md:-h-[80vh] lg:-h-[70vh] w-full flex items-center"> 
+    <div className="relative  bg-cover bg-center" style={{ backgroundImage: "url('/images/bg.png')" }}>
+      <div className="h-screen  md:mx-20 md:-h-[80vh] lg:-h-[70vh] w-full flex items-center"> 
         <div className="container  px-6 justify-center items-center text-center sm:px-8 py-12 sm:py-16">
           <div className="bg-[#958C9B] rounded-full w-fixed sm:w-[20%] justify-center text-center px-3 py-1 mb-8">
             <p className="text-white libre-baskerville-regular text-[13px]">Welcome to Starlite Care !</p>
           </div>
           <div className="mb-8 sm:mb-12">
-            <h2 className="md:text-[50px] text-center  md:text-start text-[30px] w-[300px] leading-[50px] md:w-[550px] text-white font-geistSemiBold">
+            <h2 className="md:text-[50px] justify-center mx-8 md:mx-0  md:text-start text-[30px] w-[300px] leading-[50px] md:w-[550px] text-white font-geistSemiBold">
               Home care services like no other
             </h2>
             <p className="text-white w-full sm:w-[50%] md:text-start text-center text-[12px] mt-4">

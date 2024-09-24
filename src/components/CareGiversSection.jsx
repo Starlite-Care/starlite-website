@@ -5,7 +5,7 @@ import React from 'react'
 
 const CareGiversSection = () => {
   return (
-    <section className="w-full bg-white">
+    <section className="w-full my-8 bg-white">
       <div className="flex flex-col md:flex-row items-stretch w-full bg-[#F9F3FF]">
         {/* Image Section */}
         <div className="w-full md:w-5/12 h-[300px] md:h-auto relative">
