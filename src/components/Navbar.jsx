@@ -48,6 +48,7 @@ const Navbar = () => {
         }`}
       >
         <div className="flex justify-between items-center px-4 sm:px-10 py-4">
+
           {/* Logo or Brand Name */}
           <Link
             href="/"
