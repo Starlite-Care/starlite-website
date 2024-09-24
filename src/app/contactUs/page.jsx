@@ -61,7 +61,7 @@ const ContactUs = () => {
   );
 
   return (
-    <main className="flex flex-col justify-center w-full bg-[#F1FEF4] min-h-screen py-8 px-4 md:px-8">
+    <main className="flex flex-col justify-center w-full bg-[#F1FEF4] min-h-screen py-8 pt-16 px-4 md:px-8">
       <div className="flex flex-col w-full max-w-[1000px] justify-center items-center mx-auto gap-8">
         <div className="flex flex-col justify-center items-center gap-[20px] text-center">
           <h1 className="font-geistSemiBold font-semibold text-3xl md:text-4xl">
