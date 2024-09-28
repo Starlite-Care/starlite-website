@@ -72,9 +72,9 @@ const Navbar = () => {
           {/* Logo or Brand Name */}
           <Link
             href="/"
-            className={`${linkClass(
-              "/"
-            )} text-xl sm:text-2xl font-semibold no-underline`}
+            className={`${
+              isBlackTextRoute || isScrolled ? "text-black" : "text-white"
+            } text-xl sm:text-2xl font-semibold no-underline transition-colors duration-300`}
           >
             Star<span className="text-green-400">lite</span>
           </Link>
