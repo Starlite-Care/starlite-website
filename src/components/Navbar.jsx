@@ -31,11 +31,11 @@ const Navbar = () => {
     };
   }, [pathname]);
 
-  const linkClass = (href) => {
+  const linkClass = (href, isMobile = false) => {
     const isActive = pathname === href;
-    let textColor = "text-white"; // Default color
+    let textColor = isMobile ? "text-black" : "text-white"; // Default color
 
-    if (isBlackTextRoute || (isScrolled && isWhiteTextRoute)) {
+    if (!isMobile && (isBlackTextRoute || (isScrolled && isWhiteTextRoute))) {
       textColor = "text-black";
     }
 
@@ -43,7 +43,7 @@ const Navbar = () => {
       ${isActive ? "text-green-400" : textColor}
       ${!isActive ? "hover:text-green-400" : ""}
       transition-colors duration-300
-      text-sm sm:text-base
+      ${isMobile ? "text-lg" : "text-sm sm:text-base"}
     `;
   };
 
@@ -72,9 +72,9 @@ const Navbar = () => {
           {/* Logo or Brand Name */}
           <Link
             href="/"
-            className={`${
-              isBlackTextRoute || isScrolled ? "text-black" : "text-white"
-            } text-xl sm:text-2xl font-semibold no-underline transition-colors duration-300`}
+            className={`${linkClass(
+              "/"
+            )} text-xl sm:text-2xl font-semibold no-underline`}
           >
             Star<span className="text-green-400">lite</span>
           </Link>
@@ -121,7 +121,7 @@ const Navbar = () => {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`${linkClass(link.href)} text-lg`}
+                className={linkClass(link.href, true)}
                 onClick={toggleSideMenu}
               >
                 {link.label}
