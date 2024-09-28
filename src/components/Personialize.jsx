@@ -20,7 +20,7 @@ const Personalize = () => {
       {/* Call to Action Button */}
       <Link
         href="/contactUs"
-        className="w-full sm:w-[300px] mb-7 text-center py-3 px-4 text-white font-geistRegular font-semibold text-lg rounded-full gradient transition-colors duration-300 shadow-md mt-4 mx-auto"
+        className=" sm:w-[300px] mb-7 text-center py-3 px-14 text-white font-geistRegular font-semibold text-lg rounded-full gradient transition-colors w-fit duration-300 shadow-md mt-4 mx-auto"
       >
         Contact Us
       </Link>

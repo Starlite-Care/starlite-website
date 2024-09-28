@@ -14,13 +14,13 @@ const TrustedFamilies = () => {
 
   return (
     <div className="max-w-xs mt-8">
-      <div className="relative flex justify-center items-center">
+      <div className="relative flex justify-center items-center top-4">
         {images.map((src, index) => (
           <div
             key={index}
-            className="absolute w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden border-2 border-white"
+            className="absolute w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full overflow-hidden border-2 border-white"
             style={{
-              left: `calc(50% - 6.2rem + ${index * 2.0}rem)`,
+              left: `calc(50% - 5rem + ${index * 1.6}rem)`,
               zIndex: index,
             }}
           >
@@ -35,7 +35,7 @@ const TrustedFamilies = () => {
           </div>
         ))}
       </div>
-      <p className="text-center mt-6 text-sm font-bold text-white">
+      <p className="text-center mt-10 text-xs sm:text-sm font-bold text-white">
         Trusted by over 100k families
       </p>
       <p className="text-center text-xs text-white">
@@ -54,30 +54,29 @@ const HeroSection = () => {
         backgroundPositionY: -50,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
-        // backgroundAttachment: "fixed",
       }}
     >
-      <div className="h-screen md:pt-24 md:mx-20 md:-h-[80vh] lg:-h-[70vh] w-full flex items-center">
-        <div className="container  px-6 justify-center items-center text-center sm:px-8 py-12 sm:py-16">
-          <div className="bg-[#FFFFFF1A] rounded-full w-fit justify-center text-center px-3 py-1 mb-8">
-            <p className="text-white libre-baskerville-regular text-[13px]">
+      <div className="min-h-screen md:h-[80vh] lg:h-[70vh] w-full flex items-center mx-auto mt-10">
+        <div className="w-[94%] mx-auto px-4 sm:px-6 md:px-20 py-12 sm:py-16">
+          <div className="bg-[#FFFFFF1A] rounded-full w-fit px-3 py-1 mb-8 mx-auto md:mx-0">
+            <p className="text-white libre-baskerville-regular text-xs sm:text-[13px]">
               Welcome to Starlite Care !
             </p>
           </div>
           <div className="mb-8 sm:mb-6">
-            <h2 className="md:text-[80px] justify-center mx-8 md:mx-0  md:text-start text-[30px] w-[300px] leading-[76px] md:w-[800px] text-white font-geistSemiBold">
+            <h2 className="text-3xl sm:text-5xl md:text-[80px] leading-tight md:leading-[76px] text-white font-geistSemiBold text-center md:text-start mx-auto md:mx-0 max-w-[300px] sm:max-w-none md:max-w-[800px]">
               Home care services like no other
             </h2>
-            <p className="text-white w-full sm:w-[50%] md:text-start text-center text-[12px] mt-4">
+            <p className="text-white w-full md:w-1/2 text-center md:text-start text-xs sm:text-sm mt-4">
               We provide personalized, professional home care services to help
               your loved ones live comfortably and independently in the place
               they call home.
             </p>
           </div>
-          <div className="flex flex-col sm:flex-row justify-between items-center space-y-8 sm:space-y-0">
+          <div className="flex flex-col sm:flex-row justify-between w-full items-center space-y-8 sm:space-y-0">
             <Link
               href="/contactUs"
-              className=" bg-gradient-to-tl gradient transition-colors duration-300 shadow-md px-14 py-4 rounded-full text-white text-center"
+              className="bg-gradient-to-tl gradient transition-colors duration-300 shadow-md px-10 sm:px-14 py-3 sm:py-4 rounded-full text-white text-center text-sm sm:text-base"
             >
               Contact Us
             </Link>
