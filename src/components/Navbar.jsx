@@ -41,14 +41,13 @@ const Navbar = () => {
   return (
     <>
       <div
-        className={`fixed top-0 z-50 w-full transition-all duration-300 ${
+        className={`fixed top-0 z-50 w-full transition-all duration-300 overflow-hidden ${
           isScrolled
             ? "bg-white shadow-md"
             : "bg-transparent backdrop-blur-md backdrop-filter"
         }`}
       >
-        <div className="flex justify-between items-center px-4 sm:px-10 py-4">
-
+        <div className="flex justify-between w-[89%] mx-auto items-center px-4 sm:px-10 py-4">
           {/* Logo or Brand Name */}
           <Link
             href="/"
@@ -89,6 +88,10 @@ const Navbar = () => {
       <div
         className={`fixed top-0 right-0 w-1/2 h-1/2 bg-white z-50 transform transition-transform duration-300 ease-in-out ${
           isSideMenuOpen ? "translate-x-0" : "translate-x-full"
+        } ${
+          isScrolled
+            ? "bg-white shadow-md"
+            : "bg-transparent backdrop-blur-md backdrop-filter"
         }`}
       >
         <div className="p-4 h-full flex flex-col">
