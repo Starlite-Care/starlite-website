@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
 const BLACK_TEXT_ROUTES = ["/contactUs", "/services", "/resources"];
-const WHITE_TEXT_ROUTES = ["/career", "/consultation"];
+const WHITE_TEXT_ROUTES = ["/career", "/consultation", "/"];
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -31,11 +31,11 @@ const Navbar = () => {
     };
   }, [pathname]);
 
-  const linkClass = (href, isMobile = false) => {
+  const linkClass = (href) => {
     const isActive = pathname === href;
-    let textColor = isMobile ? "text-black" : "text-white"; // Default color
+    let textColor = "text-white"; // Default color
 
-    if (!isMobile && (isBlackTextRoute || (isScrolled && isWhiteTextRoute))) {
+    if (isBlackTextRoute || (isScrolled && isWhiteTextRoute)) {
       textColor = "text-black";
     }
 
@@ -43,7 +43,7 @@ const Navbar = () => {
       ${isActive ? "text-green-400" : textColor}
       ${!isActive ? "hover:text-green-400" : ""}
       transition-colors duration-300
-      ${isMobile ? "text-lg" : "text-sm sm:text-base"}
+      text-sm sm:text-base
     `;
   };
 
@@ -64,7 +64,7 @@ const Navbar = () => {
       <div
         className={`fixed top-0 z-50 w-full transition-all duration-300 overflow-hidden ${
           isScrolled
-            ? "bg-white shadow-md"
+            ? "bg-white shadow-md text-black"
             : "bg-transparent backdrop-blur-md backdrop-filter"
         }`}
       >
@@ -72,9 +72,9 @@ const Navbar = () => {
           {/* Logo or Brand Name */}
           <Link
             href="/"
-            className={`${linkClass(
-              "/"
-            )} text-xl sm:text-2xl font-semibold no-underline`}
+            className={`${
+              isBlackTextRoute || isScrolled ? "text-black" : "text-white"
+            } text-xl sm:text-2xl font-semibold no-underline transition-colors duration-300`}
           >
             Star<span className="text-green-400">lite</span>
           </Link>
@@ -121,7 +121,9 @@ const Navbar = () => {
               <Link
                 key={link.href}
                 href={link.href}
-                className={linkClass(link.href, true)}
+                className={`text-black hover:text-green-400 text-lg ${
+                  pathname === link.href ? "text-green-500" : "text-black"
+                }`}
                 onClick={toggleSideMenu}
               >
                 {link.label}
