@@ -81,7 +81,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button onClick={toggleSideMenu} className="sm:hidden">
-            <Menu className={linkClass("/")} size={24} />
+            <Menu className={linkClass("")} size={24} />
           </button>
 
           {/* Desktop Navigation Links */}

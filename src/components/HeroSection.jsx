@@ -56,27 +56,27 @@ const HeroSection = () => {
         backgroundSize: "cover",
       }}
     >
-      <div className="min-h-screen md:h-[80vh] lg:h-[70vh] w-full flex items-center mx-auto mt-10">
+      <div className="min-h-screen md:h-[80vh] lg:h-[70vh] w-[92%] flex items-center mx-auto mt-10">
         <div className="w-[94%] mx-auto px-4 sm:px-6 md:px-20 py-12 sm:py-16">
-          <div className="bg-[#FFFFFF1A] rounded-full w-fit px-3 py-1 mb-8 mx-auto md:mx-0">
+          <div className="bg-[#FFFFFF1A] rounded-full w-fit px-3 py-1 mb-8 md:mx-0">
             <p className="text-white libre-baskerville-regular text-xs sm:text-[13px]">
               Welcome to Starlite Care !
             </p>
           </div>
           <div className="mb-8 sm:mb-6">
-            <h2 className="text-3xl sm:text-5xl md:text-[80px] leading-tight md:leading-[76px] text-white font-geistSemiBold text-center md:text-start mx-auto md:mx-0 max-w-[300px] sm:max-w-none md:max-w-[800px]">
+            <h2 className="text-3xl sm:text-5xl md:text-[80px] leading-tight md:leading-[76px] text-white font-geistSemiBold text-start md:text-startS md:mx-0 max-w-[300px] sm:max-w-none md:max-w-[800px]">
               Home care services like no other
             </h2>
-            <p className="text-white w-full md:w-1/2 text-center md:text-start text-xs sm:text-sm mt-4">
+            <p className="text-white w-full md:w-1/2 text-start md:text-start text-xs sm:text-sm mt-4">
               We provide personalized, professional home care services to help
               your loved ones live comfortably and independently in the place
               they call home.
             </p>
           </div>
-          <div className="flex flex-col sm:flex-row justify-between w-full items-center space-y-8 sm:space-y-0">
+          <div className="flex flex-col sm:flex-row justify-between w-full items-start space-y-8 sm:space-y-0">
             <Link
               href="/contactUs"
-              className="bg-gradient-to-tl gradient transition-colors duration-300 shadow-md px-10 sm:px-14 py-3 sm:py-4 rounded-full text-white text-center text-sm sm:text-base"
+              className="bg-gradient-to-tl gradient transition-colors duration-300 shadow-md px-10 sm:px-14 py-3 sm:py-4 rounded-full text-white text-start text-sm sm:text-base"
             >
               Contact Us
             </Link>
