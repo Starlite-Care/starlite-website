@@ -68,7 +68,7 @@ const Navbar = () => {
             : "bg-transparent backdrop-blur-md backdrop-filter"
         }`}
       >
-        <div className="flex justify-between w-[89%] mx-auto items-center px-4 sm:px-10 py-4">
+        <div className="flex justify-between w-[89%] max-w-7xl mx-auto items-center px-4 sm:px-10 py-4">
           {/* Logo or Brand Name */}
           <Link
             href="/"

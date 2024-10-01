@@ -56,8 +56,8 @@ const HeroSection = () => {
         backgroundSize: "cover",
       }}
     >
-      <div className="min-h-screen md:h-[80vh] lg:h-[70vh] w-[92%] flex items-center mx-auto mt-10">
-        <div className="w-[94%] mx-auto px-4 sm:px-6 md:px-20 py-12 sm:py-16">
+      <div className="min-h-screen max-w-7xl  w-[89%] px-4 md:px-10 md:h-[80vh] lg:h-[70vh] flex items-center mx-auto mt-10">
+        <div className="w-full py-12 sm:py-16">
           <div className="bg-[#FFFFFF1A] rounded-full w-fit px-3 py-1 mb-8 md:mx-0">
             <p className="text-white libre-baskerville-regular text-xs sm:text-[13px]">
               Welcome to Starlite Care !
