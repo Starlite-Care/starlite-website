@@ -6,7 +6,7 @@ import React from "react";
 const CareGiversSection = () => {
   return (
     <section className="w-full my-8 bg-white">
-      <div className="flex flex-col w-[86%] md:w-full xl:w-full md:flex-row items-stretch mx-auto max-w-7xl rounded-xl overflow-hidden sm:rounded-none bg-[#F9F3FF]">
+      <div className="flex flex-col w-[86%] md:w-full xl:w-full md:flex-row items-stretch mx-auto max-w-[1380px] rounded-xl overflow-hidden sm:rounded-none bg-[#F9F3FF]">
         {/* Image Section */}
         <div className="w-full md:w-5/12 h-[300px] md:h-auto relative">
           <Image
