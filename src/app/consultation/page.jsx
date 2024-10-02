@@ -20,6 +20,7 @@ const ScheduleCall = () => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+    console.log(`Input changed: ${name} = ${value}`); // Debug log (can be removed if no longer needed)
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
@@ -28,6 +29,7 @@ const ScheduleCall = () => {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
+    console.log("Form submitted with data:", formData); // Debug log (can be removed if no longer needed)
     setIsSubmitting(true);
 
     if (!form.current) return;

@@ -13,8 +13,9 @@ const ContactUs = () => {
   const [copied, setCopied] = useState(false);
   const [copiedEmg, setCopiedEmg] = useState(false);
   const [copiedEmail, setCopiedEmail] = useState(false);
-  const [phoneNumber, setPhoneNumber] = useState("(555) 555-1234");
-  const [emailAddress, setEmailAddress] = useState("samplemail@starlite.com");
+  const [phoneNumber, setPhoneNumber] = useState("980 800 7071");
+  const [emmergency, setEmmergency] = useState("911");
+  const [emailAddress, setEmailAddress] = useState("info@starlitenc.com");
 
   const handleCopy = async (text, setCopiedState) => {
     try {
@@ -94,14 +95,15 @@ const ContactUs = () => {
           <ContactCard
             icon={LocationIcon}
             title="Location"
-            content="Tulsa, Oklahoma"
+            content="Charlotte, NC
+"
           />
           <ContactCard
             icon={EmergencyIcon}
             title="Emergency contact"
-            content={phoneNumber}
+            content={emmergency}
             copyable={true}
-            onCopy={() => handleCopy(phoneNumber, setCopiedEmg)}
+            onCopy={() => handleCopy(emmergency, setCopiedEmg)}
             copied={copiedEmg}
           />
           <ContactCard
@@ -113,7 +115,7 @@ const ContactUs = () => {
                   Mon - Fri (9am - 6pm)
                 </p>
                 <p className="text-[14px] font-geistSemiBold font-semibold">
-                  Sat - Sun (9am - 6pm)
+                  Sat - Sun (1pm - 6pm)
                 </p>
               </div>
             }

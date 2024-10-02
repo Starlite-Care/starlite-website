@@ -3,6 +3,7 @@ import React, { useState, useRef } from "react";
 import Image from "next/image";
 import { Upload } from "lucide-react";
 import emailjs from "@emailjs/browser";
+import axios from "axios";
 import InputField from "@/components/UI/InputField";
 import Toast from "@/components/UI/Toast";
 import TimeIcon from "@/app/assets/icons/ion_time-sharp.svg";
@@ -19,7 +20,7 @@ const FeatureItem = ({ icon, text }) => (
 const ResponsiveFeatures = () => {
   return (
     <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-6">
-      <div className=" flex flex-row justify-center items-center gap-4">
+      <div className="flex flex-row justify-center items-center gap-4">
         <FeatureItem icon={TimeIcon} text="Flexible work schedule" />
         <FeatureItem icon={PayIcon} text="Competitive pay" />
       </div>
@@ -33,21 +34,119 @@ const Career = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [positionSought, setPositionSought] = useState("");
-  const [resume, setResume] = useState(null);
+  const [resumeFile, setResumeFile] = useState(null);
+  const [cloudinaryFileUpload, setCloudinaryFileUpload] = useState("");
   const [showToast, setShowToast] = useState(false);
   const [toastMessage, setToastMessage] = useState("");
+  const [toastType, setToastType] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const form = useRef();
+  const fileInputRef = useRef(null);
+
+  const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
+
+  const validatePDF = (file) => {
+    if (file.type !== "application/pdf") {
+      return { valid: false, message: "Please upload a PDF file." };
+    }
+    if (file.size > MAX_FILE_SIZE) {
+      return { valid: false, message: "PDF file size must be less than 5MB." };
+    }
+    return { valid: true };
+  };
+
+  const postToCloudinary = async (formData) => {
+    try {
+      const { data } = await axios.post(
+        `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/auto/upload`,
+        formData
+      );
+      console.log("Cloudinary response:", data);
+      return data;
+    } catch (error) {
+      console.error(
+        "Cloudinary upload failed:",
+        error.response ? error.response.data : error
+      );
+      throw new Error("Failed to upload file to Cloudinary");
+    }
+  };
+
+  const handleFileUpload = async (event) => {
+    event.preventDefault();
+    const file = event.target.files[0];
+
+    if (file) {
+      console.log("File selected:", file.name, file.type, file.size);
+      const pdfValidation = validatePDF(file);
+      if (!pdfValidation.valid) {
+        setToastMessage(pdfValidation.message);
+        setToastType("error");
+        setShowToast(true);
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append("file", file);
+      formData.append(
+        "upload_preset",
+        process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET
+      );
+
+      try {
+        console.log("Uploading to Cloudinary...");
+        const response = await postToCloudinary(formData);
+        console.log(
+          "Cloudinary upload successful. Full response:",
+          JSON.stringify(response, null, 2)
+        );
+        setCloudinaryFileUpload(response.secure_url);
+        setResumeFile(file);
+        console.log("File uploaded successfully. URL:", response.secure_url);
+        setToastMessage("Resume uploaded successfully!");
+        setToastType("success");
+        setShowToast(true);
+      } catch (error) {
+        console.error("Upload failed:", error);
+        setToastMessage("Failed to upload resume. Please try again.");
+        setToastType("error");
+        setShowToast(true);
+      }
+    }
+  };
+
+  const handleFileButtonClick = () => {
+    if (fileInputRef.current) {
+      fileInputRef.current.click();
+    }
+  };
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
+    if (!cloudinaryFileUpload) {
+      setToastMessage("Please upload a resume.");
+      setToastType("error");
+      setShowToast(true);
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
-      const result = await emailjs.sendForm(
+      const templateParams = {
+        name,
+        email,
+        phone,
+        positionSought,
+        resumeUrl: cloudinaryFileUpload,
+      };
+
+      console.log("Sending email with resume URL:", cloudinaryFileUpload);
+
+      const result = await emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-        form.current,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID2,
+        templateParams,
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
       );
 
@@ -55,15 +154,18 @@ const Career = () => {
       setToastMessage(
         "Your application has been sent successfully. We'll get back to you soon!"
       );
+      setToastType("success");
       setShowToast(true);
       setName("");
       setEmail("");
       setPhone("");
       setPositionSought("");
-      setResume(null);
+      setResumeFile(null);
+      setCloudinaryFileUpload("");
     } catch (error) {
       console.error("FAILED...", error);
       setToastMessage("Failed to send application. Please try again later.");
+      setToastType("error");
       setShowToast(true);
     } finally {
       setIsSubmitting(false);
@@ -71,23 +173,17 @@ const Career = () => {
     }
   };
 
-  const handleFileChange = (e) => {
-    if (e.target.files[0]) {
-      setResume(e.target.files[0]);
-    }
-  };
-
   return (
     <section className="w-full flex flex-col items-center">
       <div className="bg-[url('/images/joinOutTeam.png')] bg-cover bg-center h-[300px] sm:h-[400px] md:h-[560px] w-full"></div>
       <div className="w-full max-w-[800px] bg-white rounded-2xl shadow-md -mt-20 sm:-mt-40 md:-mt-60 lg:-mt-80 p-6 md:p-12 mb-12">
-        {showToast && <Toast message={toastMessage} />}
+        {showToast && <Toast message={toastMessage} type={toastType} />}
         <div className="w-full max-w-[600px] mx-auto mb-8">
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold font-geistSemiBold text-center mb-4">
             Join our team
           </h1>
           <p className="font-normal font-geistRegular text-sm text-center">
-            Are you passionate about making a difference in someones life? We
+            Are you passionate about making a difference in someone's life? We
             are always looking for caring and dedicated individuals to join our
             team. Apply today and become part of a community that values
             work/life balance, compassion and excellence.
@@ -96,7 +192,6 @@ const Career = () => {
         </div>
 
         <form
-          ref={form}
           onSubmit={handleFormSubmit}
           className="w-full max-w-[650px] mx-auto flex flex-col gap-4"
         >
@@ -125,34 +220,41 @@ const Career = () => {
             onChange={(e) => setPhone(e.target.value)}
           />
           <InputField
-            label="Position sought"
+            label="Position Sought"
             name="positionSought"
             value={positionSought}
             type="text"
-            placeholder="Home care nurse"
+            placeholder="Desired Position"
             onChange={(e) => setPositionSought(e.target.value)}
           />
           <div className="flex flex-col w-full">
-            <label className="font-normal font-geistRegular mb-2">Resume</label>
+            <label className="font-normal font-geistRegular mb-2">
+              Resume (PDF only, max 5MB)
+            </label>
             <div className="border-2 border-dashed border-green-300 rounded-lg p-4 flex items-center justify-center cursor-pointer hover:bg-green-50 transition-colors duration-300">
               <input
                 type="file"
-                name="resume"
-                accept=".pdf,.doc,.docx"
-                onChange={handleFileChange}
-                className="hidden"
-                id="resume-upload"
+                accept=".pdf"
+                onChange={handleFileUpload}
+                ref={fileInputRef}
+                style={{ display: "none" }}
               />
-              <label
-                htmlFor="resume-upload"
+              <button
+                type="button"
+                onClick={handleFileButtonClick}
                 className="cursor-pointer flex items-center"
               >
                 <Upload className="w-6 h-6 mr-2 text-green-500" />
                 <span className="text-green-500">
-                  {resume ? resume.name : "Upload a file"}
+                  {resumeFile ? resumeFile.name : "Upload your resume (PDF)"}
                 </span>
-              </label>
+              </button>
             </div>
+            {cloudinaryFileUpload && (
+              <p className="mt-2 text-sm text-green-600">
+                Resume uploaded successfully!
+              </p>
+            )}
           </div>
           <div className="w-full flex justify-start items-start">
             <button
