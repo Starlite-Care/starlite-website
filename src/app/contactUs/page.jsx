@@ -92,12 +92,23 @@ const ContactUs = () => {
             onCopy={() => handleCopy(emailAddress, setCopiedEmail)}
             copied={copiedEmail}
           />
-          <ContactCard
-            icon={LocationIcon}
-            title="Location"
-            content="Charlotte, NC
-"
-          />
+
+          <div className="flex flex-col gap-2 px-4 shadow-lg bg-white rounded-xl w-full h-[173px] justify-center">
+            <Image
+              src={LocationIcon}
+              alt={LocationIcon}
+              width={52}
+              height={52}
+            />
+            <p className="font-geistRegular font-thin text-[#252C25] text-sm w-full">
+              Location
+            </p>
+            <div className="flex flex-row items-center justify-between w-full">
+              <h2 className="text-[16px] font-geistSemiBold font-semibold break-words">
+                2015 Ayrsley Town Blvd, Suite 202. Charlotte, NC. 28273
+              </h2>
+            </div>
+          </div>
           <ContactCard
             icon={EmergencyIcon}
             title="Emergency contact"
@@ -125,7 +136,7 @@ const ContactUs = () => {
               Schedule consultation
             </h1>
             <p className="font-geistRegular font-thin text-[#252C25] text-sm w-full">
-              Have specific things to share? Schedule call with a specialist
+              Have specific things to share? Schedule a call with a specialist
             </p>
             <a
               href="/consultation"

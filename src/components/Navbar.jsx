@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
+import Icon from "../app/assets/starlite home care 1.svg";
 
 const BLACK_TEXT_ROUTES = ["/contactUs", "/services", "/resources"];
 const WHITE_TEXT_ROUTES = ["/career", "/consultation", "/"];
@@ -74,9 +76,10 @@ const Navbar = () => {
             href="/"
             className={`${
               isBlackTextRoute || isScrolled ? "text-black" : "text-white"
-            } text-xl sm:text-2xl font-semibold no-underline transition-colors duration-300`}
+            } text-xl sm:text-xl flex gap-1 font-semibold no-underline transition-colors duration-300`}
           >
-            Star<span className="text-green-400">lite</span>
+            <Image src={Icon} alt="" width={24} height={24} />
+            Starlite <span className="text-green-400">Care</span>
           </Link>
 
           {/* Mobile Menu Button */}
