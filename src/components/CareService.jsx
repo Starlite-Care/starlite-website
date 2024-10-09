@@ -25,7 +25,7 @@ const CareService = () => {
               Personal care
             </h1>
             <p className="text-sm text-[#5F5B5B] font-geistRegular">
-              Friendly supervision to assist with life's daily activities. Home
+              Friendly supervision to assist with lifes daily activities. Home
               care services ensure that individuals receive the necessary
               support while maintaining their independence.
             </p>
@@ -47,7 +47,7 @@ const CareService = () => {
             <p className="text-sm text-[#5F5B5B] font-geistRegular">
               Through meaningful conversations, shared activities, and a
               listening ear, our caregivers help reduce feelings of loneliness
-              and isolation. Whether it's sharing stories, playing games, or
+              and isolation. Whether its sharing stories, playing games, or
               simply being there for daily companionship, we aim to brighten
               each day and enhance overall well-being.
             </p>
@@ -67,7 +67,7 @@ const CareService = () => {
               {
                 title: "Outings & Errands",
                 content:
-                  "Whether it's grocery shopping, medical appointments, picking up prescriptions or social activities, our caregivers provide reliable transportation and support, ensuring clients maintain their independence and connection to the community.",
+                  "Whether its grocery shopping, medical appointments, picking up prescriptions or social activities, our caregivers provide reliable transportation and support, ensuring clients maintain their independence and connection to the community.",
               },
               {
                 title: "Laundry & Housekeeping",
