@@ -22,36 +22,6 @@ const Resources = () => {
       link: "https://www.liveinhomecare.com/vegetables-and-fruits-can-lower-the-risk-of-heart-disease-stroke-high-blood-pressure-and-other-serious-health-conditions/healthy-aging/",
       date: "May, 2024",
     },
-    // {
-    //   image: "/images/image-4.png",
-    //   title: "Positive effect of homecare ser...",
-    //   link: "",
-    //   date: "June, 2024",
-    // },
-    // {
-    //   image: "/images/image-5.png",
-    //   title: "Positive effect of homecare ser...",
-    //   link: "",
-    //   date: "June, 2024",
-    // },
-    // {
-    //   image: "/images/image-6.png",
-    //   title: "Positive effect of homecare ser...",
-    //   link: "",
-    //   date: "June, 2024",
-    // },
-    // {
-    //   image: "/images/image-7.png",
-    //   title: "Positive effect of homecare ser...",
-    //   link: "",
-    //   date: "June, 2024",
-    // },
-    // {
-    //   image: "/images/image-8.png",
-    //   title: "Positive effect of homecare ser...",
-    //   link: "",
-    //   date: "June, 2024",
-    // },
   ];
 
   const getGridColumns = (itemCount) => {
