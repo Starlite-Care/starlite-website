@@ -1,14 +1,16 @@
-import CareGiversSection from '@/components/CareGiversSection'
-import ServicesSection from '@/components/ServicesSection'
-import React from 'react'
+import CareGiversSection from "@/components/CareGiversSection";
+import CareService from "@/components/CareService";
+import ServicesSection from "@/components/ServicesSection";
+import React from "react";
 
 const page = () => {
   return (
-   <>
-     <ServicesSection />
-     <CareGiversSection />
-   </>
-  )
-}
+    <>
+      <CareService />
 
-export default page
+      <CareGiversSection />
+    </>
+  );
+};
+
+export default page;
