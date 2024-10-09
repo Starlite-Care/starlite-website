@@ -20,7 +20,20 @@ const Resources = () => {
       title:
         "Vegetables And Fruits Can Lower The Risk Of Heart Disease, Stroke, High Blood Pressure, And Other Serious Health Conditions. ",
       link: "https://www.liveinhomecare.com/vegetables-and-fruits-can-lower-the-risk-of-heart-disease-stroke-high-blood-pressure-and-other-serious-health-conditions/healthy-aging/",
+      date: "July, 2023",
+    },
+    {
+      image: "/images/image-4.png",
+      title:
+        "Minding Our Elders:This blog, run by Carol Bradley Bursack, provides a wide range of content on caregiving, including personal stories and advice. Its especially helpful for family caregivers and those navigating elder care.",
+      link: "https://mindingoureldersblogs.com",
       date: "May, 2024",
+    },
+    {
+      image: "/images/image-5.png",
+      title: " Senior Caregiving ",
+      link: "https://dailycaring.com",
+      date: ", Feb 2024",
     },
   ];
 
