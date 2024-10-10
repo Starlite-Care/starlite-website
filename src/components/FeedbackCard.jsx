@@ -2,9 +2,9 @@
 import React, { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import InputField from "./UI/InputField";
-import Toast from "./UI/Toast"; // Assuming you have a Toast component
+import Toast from "./UI/Toast";
 
-const FeedbackCard = () => {
+const FeedbackCard = ({ onClose }) => {
   const [formData, setFormData] = useState({
     name: "",
     message: "",
@@ -57,9 +57,17 @@ const FeedbackCard = () => {
   };
 
   return (
-    <div className="w-[350px] z-50 h-auto rounded-lg bg-white shadow-2xl justify-center items-center flex flex-col fixed top-[200px] gap-5 right-32 py-4">
+    <div className="w-full bg-white rounded-lg shadow-2xl p-6 relative">
       {showToast && <Toast message={toastMessage} type={toastType} />}
-      <h1 className="font-geistBold font-bold text-xl">Feedback Form</h1>
+      <button
+        onClick={onClose}
+        className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-xl"
+      >
+        ×
+      </button>
+      <h1 className="font-geistBold font-bold text-xl mb-4 text-center">
+        Feedback Form
+      </h1>
       <form
         ref={form}
         onSubmit={handleFormSubmit}
@@ -85,11 +93,11 @@ const FeedbackCard = () => {
             onChange={handleInputChange}
           />
         </div>
-        <div className="flex justify-start items-start w-full">
+        <div className="flex justify-center w-full mt-4">
           <button
             type="submit"
             disabled={isSubmitting}
-            className="bg-gradient-to-tl gradient transition-colors duration-300 shadow-md px-10 sm:px-14 py-3 sm:py-4 rounded-full text-white text-start text-sm sm:text-base disabled:opacity-50"
+            className="bg-gradient-to-tl gradient transition-colors duration-300 shadow-md px-6 sm:px-10 py-2 sm:py-3 rounded-full text-white text-center text-sm sm:text-base disabled:opacity-50 w-full sm:w-auto"
           >
             {isSubmitting ? "Sending..." : "Send message"}
           </button>
