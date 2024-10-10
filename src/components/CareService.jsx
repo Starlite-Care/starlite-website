@@ -1,6 +1,9 @@
 import Image from "next/image";
 import React from "react";
 import Image1 from "@/app/assets/images/Group 2.png";
+import Image2 from "@/app/assets/images/Group 3.png";
+import Image3 from "@/app/assets/images/Group 4.png";
+import Image4 from "@/app/assets/images/Group 5.png";
 
 const CareService = () => {
   return (
@@ -14,7 +17,7 @@ const CareService = () => {
       <div className=" flex flex-col justify-center items-center mx-auto w-[80%]">
         <div className="flex flex-col sm:flex-col sm:w-[80%] md:flex-row justify-between items-center w-full md:w-[50%] gap-10 mt-10 md:mt-20">
           <Image
-            src={Image1}
+            src={Image2}
             alt="Image1"
             width={300}
             height={380}
@@ -96,7 +99,7 @@ const CareService = () => {
       <div className=" flex flex-col justify-center items-center mx-auto w-[80%]">
         <div className="flex flex-col sm:flex-col sm:w-[80%] md:flex-row justify-between items-center w-full md:w-[60%] gap-10 mt-10 md:mt-20">
           <Image
-            src={Image1}
+            src={Image3}
             alt="Image1"
             width={300}
             height={380}
@@ -121,7 +124,7 @@ const CareService = () => {
 
         <div className="flex flex-col sm:flex-col sm:w-[80%] md:flex-row-reverse justify-between items-center w-full md:w-[55%] gap-10 mt-10 md:mt-20">
           <Image
-            src={Image1}
+            src={Image4}
             alt="Image1"
             width={300}
             height={380}
