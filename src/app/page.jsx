@@ -7,27 +7,54 @@ import CareGiversSection from "@/components/CareGiversSection";
 import Personialize from "@/components/Personialize";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
 import FeedBackIcon from "@/app/assets/icons/feedback float.svg";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import FeedbackCard from "@/components/FeedbackCard";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
+  const feedbackRef = useRef(null);
+
   const OpenFeedBack = () => {
-    setIsOpen(!isOpen);
-    // setTimeout(() => setIsOpen(false), 20000);
+    setIsOpen(true);
   };
+
+  const CloseFeedBack = (event) => {
+    if (feedbackRef.current && !feedbackRef.current.contains(event.target)) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    if (isOpen) {
+      document.addEventListener("mousedown", CloseFeedBack);
+    } else {
+      document.removeEventListener("mousedown", CloseFeedBack);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", CloseFeedBack);
+    };
+  }, [isOpen]);
+
   return (
-    <>
+    <div className="relative">
       <HeroSection />
+
       <div>
-        {isOpen && <FeedbackCard />}
+        {isOpen && (
+          <div className="fixed inset-0 z-30">
+            <div ref={feedbackRef}>
+              <FeedbackCard />
+            </div>
+          </div>
+        )}
         <button onClick={OpenFeedBack}>
           <Image
             src={FeedBackIcon}
             alt="FeedBackIcon"
             width={50}
             height={50}
-            className=" fixed top-[590px] right-14"
+            className="fixed top-[590px] z-20 right-14"
           />
         </button>
       </div>
@@ -36,6 +63,6 @@ export default function Home() {
       <CareGiversSection />
       <TestimonialCarousel />
       <Personialize />
-    </>
+    </div>
   );
 }

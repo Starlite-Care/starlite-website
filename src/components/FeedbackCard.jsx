@@ -68,6 +68,7 @@ const FeedbackCard = () => {
         <InputField
           label="Name"
           name="name"
+          required
           value={formData.name}
           type="text"
           placeholder="Micah Olabisi"
@@ -77,6 +78,7 @@ const FeedbackCard = () => {
           <label className="font-normal font-geistRegular mb-2">Message</label>
           <textarea
             name="message"
+            required
             className="w-full font-geistRegular h-32 border px-4 py-2 rounded-lg placeholder:text-[#ABA5A5] bg-[#F4F4F4] border-[#E1E1E1]"
             placeholder="Hey there! I think you should..."
             value={formData.message}
