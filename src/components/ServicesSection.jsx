@@ -4,7 +4,7 @@ import React from "react";
 const ServicesSection = () => {
   const services = [
     { title: "Personalized Care", image: "/images/personal.png" },
-    { title: "Companionship", image: "/images/image (3).png" },
+    { title: "Companionship", image: "/images/image (5).png" },
     { title: "Specialized Care", image: "/images/specialize.png" },
     { title: "Home Support", image: "/images/image (4).png" },
     { title: "Post-Surgery Recovery Care", image: "/images/sugery.png" },
