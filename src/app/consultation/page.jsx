@@ -92,7 +92,6 @@ const ScheduleCall = () => {
             name="name"
             value={formData.name}
             type="text"
-            required
             placeholder="Alexandre Porchosky"
             onChange={handleInputChange}
           />
@@ -101,14 +100,12 @@ const ScheduleCall = () => {
             name="email"
             value={formData.email}
             type="email"
-            required
             placeholder="Alexandrepor@gmail.com"
             onChange={handleInputChange}
           />
           <InputField
             label="Phone number"
             name="phone"
-            required
             value={formData.phone}
             type="tel"
             placeholder="xxx-xxxx-xxx"

@@ -17,6 +17,7 @@ const InputField = ({
         {label}
       </label>
       <input
+        required
         id={name}
         name={name} // Add this line
         type={type}
