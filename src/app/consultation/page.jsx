@@ -92,6 +92,7 @@ const ScheduleCall = () => {
             name="name"
             value={formData.name}
             type="text"
+            required
             placeholder="Alexandre Porchosky"
             onChange={handleInputChange}
           />
@@ -100,12 +101,14 @@ const ScheduleCall = () => {
             name="email"
             value={formData.email}
             type="email"
+            required
             placeholder="Alexandrepor@gmail.com"
             onChange={handleInputChange}
           />
           <InputField
             label="Phone number"
             name="phone"
+            required
             value={formData.phone}
             type="tel"
             placeholder="xxx-xxxx-xxx"
@@ -125,6 +128,7 @@ const ScheduleCall = () => {
             </label>
             <textarea
               name="message"
+              required
               className="w-full font-geistRegular h-32 border px-4 py-2 rounded-lg placeholder:text-[#ABA5A5] bg-[#F4F4F4] border-[#E1E1E1]"
               placeholder="Your message here..."
               value={formData.message}

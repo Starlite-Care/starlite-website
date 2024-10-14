@@ -199,6 +199,7 @@ const Career = () => {
             label="Full Name"
             name="name"
             value={name}
+            required
             type="text"
             placeholder="Alexandre Porchosky"
             onChange={(e) => setName(e.target.value)}
@@ -208,6 +209,7 @@ const Career = () => {
             name="email"
             value={email}
             type="email"
+            required
             placeholder="Alexandrepor@gmail.com"
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -216,6 +218,7 @@ const Career = () => {
             name="phone"
             value={phone}
             type="tel"
+            required
             placeholder="xxx-xxxx-xxx"
             onChange={(e) => setPhone(e.target.value)}
           />
@@ -224,6 +227,7 @@ const Career = () => {
             name="positionSought"
             value={positionSought}
             type="text"
+            required
             placeholder="Desired Position"
             onChange={(e) => setPositionSought(e.target.value)}
           />
@@ -237,6 +241,7 @@ const Career = () => {
                 accept=".pdf"
                 onChange={handleFileUpload}
                 ref={fileInputRef}
+                required
                 style={{ display: "none" }}
               />
               <button
