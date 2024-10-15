@@ -191,9 +191,9 @@ const Career = () => {
             Join our team
           </h1>
           <p className="font-normal font-geistRegular text-sm text-center">
-            Are you passionate about making a difference in someone's life? We
-            are always looking for caring and dedicated individuals to join our
-            team. Apply today and become part of a community that values
+            Are you passionate about making a difference in someone&apos;s life?
+            We are always looking for caring and dedicated individuals to join
+            our team. Apply today and become part of a community that values
             work/life balance, compassion and excellence.
           </p>
           <ResponsiveFeatures />
