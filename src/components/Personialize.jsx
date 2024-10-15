@@ -28,7 +28,11 @@ const Personalize = () => {
       {/* Social Media Icons */}
       <div className="flex space-x-4 sm:space-x-6">
         {/* Facebook Icon */}
-        <a href="#" className="w-10 h-10 sm:w-12 sm:h-12 relative">
+        <a
+          href="https://www.facebook.com/share/iVqU5WgAhHHF4mBG/?mibextid=LQQJ4d"
+          className="w-10 h-10 sm:w-12 sm:h-12 relative"
+          target="_blank"
+        >
           <Image
             src="/images/facebook.svg"
             alt="Facebook"
@@ -39,7 +43,11 @@ const Personalize = () => {
         </a>
 
         {/* LinkedIn Icon */}
-        <a href="#" className="w-10 h-10 sm:w-12 sm:h-12 relative">
+        <a
+          href="https://www.linkedin.com/in/starlite-care-075277333/"
+          className="w-10 h-10 sm:w-12 sm:h-12 relative"
+          target="_blank"
+        >
           <Image
             src="/images/in.svg"
             alt="LinkedIn"
@@ -50,14 +58,21 @@ const Personalize = () => {
         </a>
 
         {/* X (Twitter) Icon */}
-        <a href="#" className="w-10 h-10 sm:w-12 sm:h-12 relative">
-          <Image
-            src="/images/x.svg"
-            alt="Twitter"
-            fill
-            style={{ objectFit: "contain" }}
-            sizes="(max-width: 640px) 40px, 48px"
-          />
+        <a
+          href="https://www.instagram.com/starlitenc?igsh=MWI4MHhucW5nYWUwcQ%3D%3D&utm_source=qr"
+          target="_blank"
+          className="w-10 h-10 sm:w-12 sm:h-12 relative"
+        >
+          <div className=" flex flex-col justify-center items-center p-1 bg-[#F9F3FF] w-12 h-12 rounded-full">
+            <Image
+              src="/images/icons8-instagram-logo-94.png"
+              alt="Twitter"
+              width={32}
+              height={32}
+              style={{ objectFit: "contain" }}
+              sizes="(max-width: 640px) 40px, 48px"
+            />
+          </div>
         </a>
       </div>
     </section>
