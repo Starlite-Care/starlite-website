@@ -44,12 +44,20 @@ const Career = () => {
 
   const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
 
-  const validatePDF = (file) => {
-    if (file.type !== "application/pdf") {
-      return { valid: false, message: "Please upload a PDF file." };
+  const validateFile = (file) => {
+    const allowedTypes = [
+      "application/pdf",
+      "application/msword",
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    ];
+    if (!allowedTypes.includes(file.type)) {
+      return {
+        valid: false,
+        message: "Please upload a PDF or Word document (.doc or .docx).",
+      };
     }
     if (file.size > MAX_FILE_SIZE) {
-      return { valid: false, message: "PDF file size must be less than 5MB." };
+      return { valid: false, message: "File size must be less than 5MB." };
     }
     return { valid: true };
   };
@@ -77,9 +85,9 @@ const Career = () => {
 
     if (file) {
       console.log("File selected:", file.name, file.type, file.size);
-      const pdfValidation = validatePDF(file);
-      if (!pdfValidation.valid) {
-        setToastMessage(pdfValidation.message);
+      const fileValidation = validateFile(file);
+      if (!fileValidation.valid) {
+        setToastMessage(fileValidation.message);
         setToastType("error");
         setShowToast(true);
         return;
@@ -183,7 +191,7 @@ const Career = () => {
             Join our team
           </h1>
           <p className="font-normal font-geistRegular text-sm text-center">
-            Are you passionate about making a difference in someones life? We
+            Are you passionate about making a difference in someone's life? We
             are always looking for caring and dedicated individuals to join our
             team. Apply today and become part of a community that values
             work/life balance, compassion and excellence.
@@ -233,12 +241,12 @@ const Career = () => {
           />
           <div className="flex flex-col w-full">
             <label className="font-normal font-geistRegular mb-2">
-              Resume (PDF only, max 5MB)
+              Resume (PDF or Word document, max 5MB)
             </label>
             <div className="border-2 border-dashed border-green-300 rounded-lg p-4 flex items-center justify-center cursor-pointer hover:bg-green-50 transition-colors duration-300">
               <input
                 type="file"
-                accept=".pdf"
+                accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
                 onChange={handleFileUpload}
                 ref={fileInputRef}
                 required
@@ -251,7 +259,9 @@ const Career = () => {
               >
                 <Upload className="w-6 h-6 mr-2 text-green-500" />
                 <span className="text-green-500">
-                  {resumeFile ? resumeFile.name : "Upload your resume (PDF)"}
+                  {resumeFile
+                    ? resumeFile.name
+                    : "Upload your resume (PDF or Word)"}
                 </span>
               </button>
             </div>
