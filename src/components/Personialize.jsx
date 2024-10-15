@@ -54,10 +54,11 @@ const Personalize = () => {
             fill
             style={{ objectFit: "contain" }}
             sizes="(max-width: 640px) 40px, 48px"
+            target="_blank"
           />
         </a>
 
-        {/* X (Twitter) Icon */}
+        {/* Instagram Icon */}
         <a
           href="https://www.instagram.com/starlitenc?igsh=MWI4MHhucW5nYWUwcQ%3D%3D&utm_source=qr"
           target="_blank"
